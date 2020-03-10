@@ -60,8 +60,10 @@ const drawCircle = function ({ x, y }) {
 };
 
 const isInViewport = function ({ x, y }) {
-  return x >= viewportOffsetX && x <= viewportOffsetX + viewportWidth &&
-    y >= viewportOffsetY && y <= viewportOffsetY + viewportHeight;
+  return x >= viewportOffsetX - circleRadius &&
+    x <= viewportOffsetX + viewportWidth + circleRadius &&
+    y >= viewportOffsetY - circleRadius &&
+    y <= viewportOffsetY + viewportHeight + circleRadius;
 };
 
 const drawCircles = function () {
